@@ -1,5 +1,40 @@
+INDEX .INT 0
+A1 .INT 1
+A2 .INT 2
+A3 .INT 3
+A4 .INT 4
+A5 .INT 5
+A6 .INT 6
+AFinal .INT 0
+B300 .INT 300
+B150 .INT 150
+B50 .INT 50
+B20 .INT 20
+B10 .INT 10
+B5 .INT 5
+BFinal .INT 0
+C500 .INT 500
+C2 .INT 2
+C5 .INT 5
+C10 .INT 10
+T .BYT T
+y .BYT y
+l .BYT l
+e .BYT e
+r .BYT r
+R .BYT R
+a .BYT a
+n .BYT n
+d .BYT d
+o .BYT o
+p .BYT p
+h .BYT h
+, .BYT ,
+space .BYT (sp)
+newLine .BYT \n
+
 //STEP 1
-LDB R03 T
+LDB R3 T
 TRP 3
 LDB R3 y
 TRP 3
@@ -254,40 +289,5 @@ TRP 1
 LDB R3 space
 TRP 3
 TRP 3
-
-INDEX .INT 0
-A1 .INT 1
-A2 .INT 2
-A3 .INT 3
-A4 .INT 4
-A5 .INT 5
-A6 .INT 6
-AFinal .INT 0
-B300 .INT 300
-B150 .INT 150
-B50 .INT 50
-B20 .INT 20
-B10 .INT 10
-B5 .INT 5
-BFinal .INT 0
-C500 .INT 500
-C2 .INT 2
-C5 .INT 5
-C10 .INT 10
-T .BYT 'T'
-y .BYT 'y'
-l .BYT 'l'
-e .BYT 'e'
-r .BYT 'r'
-R .BYT 'R'
-a .BYT 'a'
-n .BYT 'n'
-d .BYT 'd'
-o .BYT 'o'
-p .BYT 'p'
-h .BYT 'h'
-, .BYT ','
-space .BYT ' '
-newLine .BYT '\n'
 
 TRP 0

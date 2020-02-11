@@ -33,7 +33,7 @@ comma .BYT ,
 space .BYT (sp)
 newLine .BYT \n
 
-//STEP 1
+; STEP 1
 LDB R3 R
 TRP 3
 LDB R3 a
@@ -65,12 +65,12 @@ TRP 3
 LDB R3 r
 TRP 3
 
-//STEP 2
+; STEP 2
 LDB R3 newLine
 TRP 3
 TRP 3
 
-//STEP 3
+; STEP 3
 LDR R0 B300
 LDR R1 B150
 ADD R1 R0
@@ -122,12 +122,12 @@ LDB R3 space
 TRP 3
 TRP 3
 
-//STEP 4
+; STEP 4
 LDB R3 newLine
 TRP 3
 TRP 3
 
-//STEP 5
+; STEP 5
 LDR R0 A1
 LDR R1 A2
 MUL R1 R0
@@ -179,12 +179,12 @@ LDB R3 space
 TRP 3
 TRP 3
 
-//STEP 6
+; STEP 6
 LDB R3 newLine
 TRP 3
 TRP 3
 
-//STEP 7
+; STEP 7
 LDR R0 B300
 LDR R1 BFinal
 DIV R1 R0
@@ -248,12 +248,12 @@ LDB R3 space
 TRP 3
 TRP 3
 
-//STEP 8
+; STEP 8
 LDB R3 newLine
 TRP 3
 TRP 3
 
-//STEP 9
+; STEP 9
 LDR R0 C500
 LDR R1 AFinal
 SUB R1 R0

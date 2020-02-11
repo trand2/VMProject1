@@ -51,11 +51,6 @@ public class Assembler {
 //        }
 
         executeVM();
-//
-//        System.out.println(MEM.getInt(3060));
-//        char test = (char)MEM.get(3076);
-//        System.out.println(test);
-//        System.out.println(symbolTable);
     }
 
     private static void readLine(String fileName) throws IOException {
@@ -74,7 +69,7 @@ public class Assembler {
         String[] data;
 
         //Do not read comments
-        if (!content.contains("//")) {
+        if (!content.contains(";")) {
 
             //split on whitespace
             data = content.split("\\s+");
@@ -136,13 +131,6 @@ public class Assembler {
         }
     }
 
-    //Store the operator label into the symbol table and update PC accordingly
-//    private static void storeOperator(String[] operator) {
-//
-//        PC += SIZE_OF_INSTRUCTION;
-//
-//    }
-
     //Store the directive label into the symbol table  and update PC accordingly
     private static void storeDirective(String[] directive) {
 
@@ -162,10 +150,8 @@ public class Assembler {
 
     // Convert instruction to bytecode and store in memory
     private static void instToBytecode(String[] instruction) {
-        byte[] labelByte;
         int regValue;
         int labelAddress;
-        byte labelValue;
 
         if (instruction[0].matches("STR|LDR|LDB")) {
             //Store label into memory
@@ -181,10 +167,6 @@ public class Assembler {
             }
 
             labelAddress = symbolTable.get(instruction[2]);
-
-
-//            labelValue = MEM.get(labelAddress);
-
 
             MEM.position(PC).putInt(labelAddress);
             PC += 4;
@@ -214,12 +196,6 @@ public class Assembler {
         } else {
             System.out.println("Invalid instruction - " + instruction[0]);
         }
-
-        //System.out.println("Store Directive " + Arrays.toString(instruction));
-
-        //instructionByte = instruction[2].getBytes();
-
-        //MEM.put(instructionByte);
 
     }
 
@@ -322,9 +298,8 @@ public class Assembler {
                 case 21: //TRP
                     if (IR.opd1 == 0) { // Execute STOP trap routine. 0, stop program
                         running = false;
+                        System.out.println();
                         System.exit(0);
-                        PC += 12;
-                        break;
                     } else if (IR.opd1 == 1) { //write integer to standard out
                         System.out.print(Reg[3]);
                         PC += 12;
@@ -342,10 +317,8 @@ public class Assembler {
                     } else if (IR.opd1 == 99) { //DEBUG (OPTIONAL)
                         break;
                     } else {
-                        System.out.println("Invalid TRP command. Try again");
-                        PC += 12;
-                        System.exit(0);
-                        break;
+                        System.err.println("\nInvalid TRP command. Try again");
+                        System.exit(99);
                     }
 
             }
@@ -359,12 +332,6 @@ public class Assembler {
         int opd1 = MEM.getInt(pc+4);
         int opd2 = 0;
 
-        //If the opcode equals an instruction that contains a label then store the address of the label in opd2
-//        if (opcode == 9 || opcode == 10 || opcode == 12) {
-//            char value = (char)MEM.getInt(PC+8);
-//            String stringValue = String.valueOf(value);
-//            opd2 = symbolTable.get(stringValue);
-//        } else
         if (opcode != 21) { //If it is not the TRP command then get the next value otherwise leave it at 0
             opd2 = MEM.getInt(pc+8);
         }

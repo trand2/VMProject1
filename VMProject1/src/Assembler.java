@@ -46,9 +46,9 @@ public class Assembler {
         secondPass = true;
         readLine(fileName);
 
-        for (int i = 0; i < SIZE_OF_MEM; i++) {
-            System.out.println(i + ": " + MEM.get(i));
-        }
+//        for (int i = 0; i < SIZE_OF_MEM; i++) {
+//            System.out.println(i + ": " + MEM.get(i));
+//        }
 
         executeVM();
 //
@@ -183,10 +183,10 @@ public class Assembler {
             labelAddress = symbolTable.get(instruction[2]);
 
 
-            labelValue = MEM.get(labelAddress);
+//            labelValue = MEM.get(labelAddress);
 
 
-            MEM.position(PC).putInt(labelValue);
+            MEM.position(PC).putInt(labelAddress);
             PC += 4;
 
         } else if (instruction[0].matches("MOV|ADD|SUB|DIV|MUL")) {
@@ -294,13 +294,13 @@ public class Assembler {
                     PC += 12;
                     break;
                 case 10: //LDR
-                    Reg[IR.opd1] = IR.opd2;
-//                    Reg[IR.opd1] = MEM.getInt(IR.opd2);
+//                    Reg[IR.opd1] = IR.opd2;
+                    Reg[IR.opd1] = MEM.getInt(IR.opd2);
                     PC += 12;
                     break;
                 case 12: //LDB
-                    Reg[IR.opd1] = IR.opd2;
-//                    Reg[IR.opd1] = MEM.get(IR.opd2);
+//                    Reg[IR.opd1] = IR.opd2;
+                    Reg[IR.opd1] = MEM.get(IR.opd2);
                     PC += 12;
                     break;
                 case 13: //ADD
@@ -326,7 +326,8 @@ public class Assembler {
                         PC += 12;
                         break;
                     } else if (IR.opd1 == 1) { //write integer to standard out
-                        //TODO
+                        System.out.print(Reg[3]);
+                        PC += 12;
                         break;
                     } else if (IR.opd1 == 2) { //read an integer from standard in
                         //TODO
@@ -359,12 +360,12 @@ public class Assembler {
         int opd2 = 0;
 
         //If the opcode equals an instruction that contains a label then store the address of the label in opd2
-//            if (opcode == 9 || opcode == 10 || opcode == 12) {
-//                char value = (char)MEM.getInt(PC+8);
-//                String stringValue = String.valueOf(value);
-//                opd2 = symbolTable.get(stringValue);
-//            } else
-            if (opcode != 21) { //If it is not the TRP command then get the next value otherwise leave it at 0
+//        if (opcode == 9 || opcode == 10 || opcode == 12) {
+//            char value = (char)MEM.getInt(PC+8);
+//            String stringValue = String.valueOf(value);
+//            opd2 = symbolTable.get(stringValue);
+//        } else
+        if (opcode != 21) { //If it is not the TRP command then get the next value otherwise leave it at 0
             opd2 = MEM.getInt(pc+8);
         }
 

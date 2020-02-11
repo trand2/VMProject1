@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="VMProject1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/VMProject1_jar</output-path>
+    <root id="archive" name="VMProject1.jar">
+      <element id="module-output" name="VMProject1" />
+    </root>
+  </artifact>
+</component>

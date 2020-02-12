@@ -7,10 +7,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fbd027c-e604-414e-8aef-ded7be0e7162" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/VMProject1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/VMProject1_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/VMProject1_jar/VMProject1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/VMProject1_jar/VMProject1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VMProject1/Assembler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VMProject1/Assembler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/VMProject1/InstructionRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VMProject1/InstructionRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proj1.asm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/VMProject1/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/VMProject1/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assembler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assembler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +37,8 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15332031" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -108,7 +111,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Assembler.java</url>
-          <line>310</line>
+          <line>309</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>

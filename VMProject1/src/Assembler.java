@@ -298,7 +298,6 @@ public class Assembler {
                 case 21: //TRP
                     if (IR.opd1 == 0) { // Execute STOP trap routine. 0, stop program
                         running = false;
-                        System.out.println();
                         System.exit(0);
                     } else if (IR.opd1 == 1) { //write integer to standard out
                         System.out.print(Reg[3]);

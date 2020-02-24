@@ -5,11 +5,11 @@ import java.nio.ByteBuffer;
 import java.util.*;
 
 public class Assembler {
-    private static int PC = 3000;
+    private static int PC = 0;
+    private static int CODE_START = 0;
     private static int SIZE_OF_INT = 4;
     private static int SIZE_OF_MEM = 4000;
     private static int SIZE_OF_INSTRUCTION = 12;
-//    private static byte[] MEM = new byte[1000];
     private static ByteBuffer MEM = ByteBuffer.allocate(SIZE_OF_MEM);
     private static HashMap<String, Integer> symbolTable = new HashMap<>();
     static int[] Reg = new int[8];
@@ -40,7 +40,8 @@ public class Assembler {
 
         //First pass
         readLine(fileName);
-        PC = 0;
+        //PC = 0;
+        CODE_START = PC;
 
         //Second pass
         secondPass = true;
@@ -251,7 +252,7 @@ public class Assembler {
     }
 
     private static void executeVM() {
-        PC = 0;
+        PC = CODE_START;
         InstructionRegister IR;
         Boolean running = true;
 
